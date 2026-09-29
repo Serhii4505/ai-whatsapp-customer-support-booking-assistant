@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#e7eff3"/><rect x="120" y="45" width="960" height="810" rx="30" fill="#f8fafb" stroke="#cad8df" stroke-width="2"/>
+  <rect x="120" y="45" width="960" height="105" rx="30" fill="#143f4b"/><rect x="120" y="120" width="960" height="30" fill="#143f4b"/>
+  <circle cx="190" cy="98" r="29" fill="#42c5a0"/><text x="190" y="107" text-anchor="middle" font-family="Arial" font-size="27" font-weight="700" fill="#fff">N</text>
+  <text x="240" y="92" font-family="Arial" font-size="27" font-weight="700" fill="#fff">Northstar Service Studio</text><text x="240" y="122" font-family="Arial" font-size="16" fill="#b9d8df">SYNTHETIC MOCK CONVERSATION</text>
+  <g font-family="Arial" font-size="19">
+    <rect x="480" y="185" width="530" height="72" rx="22" fill="#d9f8e8"/><text x="510" y="217" fill="#17313b">Hi! I would like to book a Standard</text><text x="510" y="243" fill="#17313b">Service Appointment.</text>
+    <rect x="180" y="285" width="610" height="98" rx="22" fill="#fff" stroke="#d6e0e5"/><text x="210" y="319" fill="#17313b">Available demo slots on 30 September 2026:</text><text x="210" y="350" fill="#17313b">11:00 · 11:15 · 11:30  (Europe/Warsaw)</text>
+    <rect x="720" y="412" width="290" height="62" rx="22" fill="#d9f8e8"/><text x="755" y="451" fill="#17313b">11:00 works for me.</text>
+    <rect x="180" y="502" width="690" height="96" rx="22" fill="#fff" stroke="#d6e0e5"/><text x="210" y="536" fill="#17313b">Please confirm STANDARD_VISIT on</text><text x="210" y="568" fill="#17313b">30 September 2026 at 11:00.</text>
+    <rect x="825" y="627" width="185" height="62" rx="22" fill="#d9f8e8"/><text x="873" y="666" fill="#17313b" font-weight="700">confirm</text>
+    <rect x="180" y="717" width="690" height="88" rx="22" fill="#eaf7f2" stroke="#42c5a0" stroke-width="2"/><text x="210" y="752" fill="#17313b" font-weight="700">Demo booking confirmed</text><text x="210" y="783" fill="#526c75">No real message or calendar event was created.</text>
+  </g>
+</svg>

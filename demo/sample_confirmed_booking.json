@@ -1,0 +1,15 @@
+{
+  "demo_only": true,
+  "booking_id": "00000000-0000-4000-8000-000000000501",
+  "request_id": "00000000-0000-4000-8000-000000000401",
+  "service_id": "STANDARD_VISIT",
+  "service_name": "Standard Service Appointment",
+  "slot_start": "2026-09-30T11:00:00+02:00",
+  "slot_end": "2026-09-30T12:00:00+02:00",
+  "buffer_minutes": 15,
+  "timezone": "Europe/Warsaw",
+  "status": "confirmed",
+  "calendar_event_ref": "mock-event-00000000-0000-4000-8000-000000000601",
+  "sheet_status": "synced",
+  "notification_status": "mock_sent"
+}

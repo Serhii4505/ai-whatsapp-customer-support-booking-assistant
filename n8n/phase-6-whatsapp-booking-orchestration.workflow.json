@@ -1,0 +1,133 @@
+{
+  "name": "AI WhatsApp Support & Booking - Phase 6 Mock Orchestration",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "phase-6-synthetic-message",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "synthetic-message-trigger",
+      "name": "Synthetic Message Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-720, -180]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.FASTAPI_BASE_URL }}/api/v1/orchestration/process",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify($json.body) }}",
+        "options": {}
+      },
+      "id": "process-with-fastapi",
+      "name": "Process with FastAPI",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [-480, -180]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {"caseSensitive": true, "typeValidation": "strict"},
+                "conditions": [{"leftValue": "={{ $json.action }}", "rightValue": "send_grounded_reply", "operator": {"type": "string", "operation": "equals"}}]
+              },
+              "renameOutput": true,
+              "outputKey": "grounded_reply"
+            },
+            {
+              "conditions": {
+                "options": {"caseSensitive": true, "typeValidation": "strict"},
+                "conditions": [{"leftValue": "={{ $json.action }}", "rightValue": "continue_booking_in_python", "operator": {"type": "string", "operation": "equals"}}]
+              },
+              "renameOutput": true,
+              "outputKey": "booking_flow"
+            },
+            {
+              "conditions": {
+                "options": {"caseSensitive": true, "typeValidation": "strict"},
+                "conditions": [{"leftValue": "={{ $json.action }}", "rightValue": "manager_handoff", "operator": {"type": "string", "operation": "equals"}}]
+              },
+              "renameOutput": true,
+              "outputKey": "manager_handoff"
+            }
+          ]
+        },
+        "options": {"fallbackOutput": "extra"}
+      },
+      "id": "route-python-decision",
+      "name": "Route Python Decision",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [-240, -180]
+    },
+    {
+      "parameters": {"respondWith": "json", "responseBody": "={{ $json }}", "options": {}},
+      "id": "return-message-result",
+      "name": "Return Message Result",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [40, -180]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "phase-7-synthetic-booking-fulfillment",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "synthetic-booking-fulfillment-trigger",
+      "name": "Synthetic Booking Fulfillment Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-720, 220]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.FASTAPI_BASE_URL }}/api/v1/orchestration/bookings/{{ $json.body.booking_id }}/fulfill",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ idempotency_key: $json.body.idempotency_key }) }}",
+        "options": {}
+      },
+      "id": "fulfill-booking-with-fastapi",
+      "name": "Fulfill Booking with FastAPI",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [-440, 220]
+    },
+    {
+      "parameters": {"respondWith": "json", "responseBody": "={{ $json }}", "options": {}},
+      "id": "return-fulfillment-result",
+      "name": "Return Fulfillment Result",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [-160, 220]
+    }
+  ],
+  "connections": {
+    "Synthetic Message Trigger": {"main": [[{"node": "Process with FastAPI", "type": "main", "index": 0}]]},
+    "Process with FastAPI": {"main": [[{"node": "Route Python Decision", "type": "main", "index": 0}]]},
+    "Route Python Decision": {
+      "main": [
+        [{"node": "Return Message Result", "type": "main", "index": 0}],
+        [{"node": "Return Message Result", "type": "main", "index": 0}],
+        [{"node": "Return Message Result", "type": "main", "index": 0}],
+        [{"node": "Return Message Result", "type": "main", "index": 0}]
+      ]
+    },
+    "Synthetic Booking Fulfillment Trigger": {"main": [[{"node": "Fulfill Booking with FastAPI", "type": "main", "index": 0}]]},
+    "Fulfill Booking with FastAPI": {"main": [[{"node": "Return Fulfillment Result", "type": "main", "index": 0}]]}
+  },
+  "active": false,
+  "settings": {"executionOrder": "v1"}
+}

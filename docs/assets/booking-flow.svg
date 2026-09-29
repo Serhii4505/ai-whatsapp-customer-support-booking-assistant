@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs><linearGradient id="bg" x1="0" x2="1"><stop stop-color="#f6f9fc"/><stop offset="1" stop-color="#eaf2f8"/></linearGradient><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#246b8e"/></marker></defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="80" y="82" font-family="Arial" font-size="44" font-weight="700" fill="#17324a">Controlled Booking Flow</text>
+  <text x="80" y="122" font-family="Arial" font-size="21" fill="#5f7488">Explicit confirmation, final availability recheck and replay-safe fulfillment</text>
+  <g font-family="Arial">
+    <g><rect x="90" y="205" width="260" height="120" rx="18" fill="#fff" stroke="#4ca7c7" stroke-width="3"/><text x="220" y="252" text-anchor="middle" font-size="24" font-weight="700" fill="#17324a">1 · Verified message</text><text x="220" y="286" text-anchor="middle" font-size="17" fill="#607488">Signature + dedupe</text></g>
+    <g><rect x="450" y="205" width="260" height="120" rx="18" fill="#fff" stroke="#7a6ee6" stroke-width="3"/><text x="580" y="252" text-anchor="middle" font-size="24" font-weight="700" fill="#17324a">2 · Intent</text><text x="580" y="286" text-anchor="middle" font-size="17" fill="#607488">FAQ, booking or handoff</text></g>
+    <g><rect x="810" y="205" width="260" height="120" rx="18" fill="#fff" stroke="#3bb78f" stroke-width="3"/><text x="940" y="252" text-anchor="middle" font-size="24" font-weight="700" fill="#17324a">3 · Available slots</text><text x="940" y="286" text-anchor="middle" font-size="17" fill="#607488">Warsaw time + buffer</text></g>
+    <g><rect x="1170" y="205" width="340" height="120" rx="18" fill="#fff" stroke="#f0a33a" stroke-width="3"/><text x="1340" y="252" text-anchor="middle" font-size="24" font-weight="700" fill="#17324a">4 · Customer selects slot</text><text x="1340" y="286" text-anchor="middle" font-size="17" fill="#607488">15-minute confirmation window</text></g>
+    <g><rect x="1170" y="485" width="340" height="120" rx="18" fill="#fff8ea" stroke="#f0a33a" stroke-width="3"/><text x="1340" y="532" text-anchor="middle" font-size="24" font-weight="700" fill="#17324a">5 · Explicit “confirm”</text><text x="1340" y="566" text-anchor="middle" font-size="17" fill="#607488">Python validates state</text></g>
+    <g><rect x="810" y="485" width="260" height="120" rx="18" fill="#eefbf7" stroke="#3bb78f" stroke-width="3"/><text x="940" y="532" text-anchor="middle" font-size="24" font-weight="700" fill="#17324a">6 · Final recheck</text><text x="940" y="566" text-anchor="middle" font-size="17" fill="#607488">Reject occupied slot</text></g>
+    <g><rect x="450" y="485" width="260" height="120" rx="18" fill="#f4f1ff" stroke="#7a6ee6" stroke-width="3"/><text x="580" y="532" text-anchor="middle" font-size="24" font-weight="700" fill="#17324a">7 · One event</text><text x="580" y="566" text-anchor="middle" font-size="17" fill="#607488">Atomic + idempotent</text></g>
+    <g><rect x="90" y="485" width="260" height="120" rx="18" fill="#edf8fc" stroke="#4ca7c7" stroke-width="3"/><text x="220" y="532" text-anchor="middle" font-size="24" font-weight="700" fill="#17324a">8 · Fulfillment</text><text x="220" y="566" text-anchor="middle" font-size="17" fill="#607488">Sheets + notification</text></g>
+  </g>
+  <g stroke="#246b8e" stroke-width="4" fill="none" marker-end="url(#a)"><path d="M350 265H445"/><path d="M710 265H805"/><path d="M1070 265H1165"/><path d="M1340 325V480"/><path d="M1170 545H1075"/><path d="M810 545H715"/><path d="M450 545H355"/></g>
+  <rect x="90" y="700" width="1420" height="105" rx="20" fill="#17324a"/>
+  <text x="800" y="744" text-anchor="middle" font-family="Arial" font-size="23" font-weight="700" fill="#fff">Failure policy</text>
+  <text x="800" y="779" text-anchor="middle" font-family="Arial" font-size="19" fill="#cfe0ec">Fail closed · persist error · retry with the same stable key · never duplicate an event, row or message</text>
+</svg>

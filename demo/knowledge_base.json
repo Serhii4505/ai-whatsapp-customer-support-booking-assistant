@@ -1,0 +1,72 @@
+{
+  "business": {
+    "name": "Northstar Service Studio",
+    "language": "en",
+    "timezone": "Europe/Warsaw",
+    "approved": true
+  },
+  "services": [
+    {
+      "service_id": "INTRO_CALL",
+      "name": "Introductory Consultation",
+      "aliases": ["intro call", "consultation", "introductory consultation"],
+      "duration_minutes": 30,
+      "description": "A short consultation to understand the customer's request and identify the appropriate next step.",
+      "approved": true
+    },
+    {
+      "service_id": "STANDARD_VISIT",
+      "name": "Standard Service Appointment",
+      "aliases": ["standard visit", "standard appointment", "standard service"],
+      "duration_minutes": 60,
+      "description": "A standard appointment for routine service work within the agreed scope.",
+      "approved": true
+    },
+    {
+      "service_id": "EXTENDED_SESSION",
+      "name": "Extended Service Session",
+      "aliases": ["extended session", "long session", "extended service"],
+      "duration_minutes": 90,
+      "description": "An extended appointment for requests that need additional time.",
+      "approved": true
+    }
+  ],
+  "faq": [
+    {
+      "source_id": "faq-business-hours",
+      "topic": "business_hours",
+      "keywords": ["open", "opening", "hours", "working", "available"],
+      "answer": "Northstar Service Studio operates Monday to Friday from 09:00 to 17:00 in the Europe/Warsaw time zone.",
+      "approved": true
+    },
+    {
+      "source_id": "faq-services",
+      "topic": "services",
+      "keywords": ["service", "services", "offer", "appointment", "consultation", "session"],
+      "answer": "Northstar Service Studio offers three demo services: a 30-minute Introductory Consultation, a 60-minute Standard Service Appointment, and a 90-minute Extended Service Session.",
+      "approved": true
+    },
+    {
+      "source_id": "faq-pricing",
+      "topic": "pricing",
+      "keywords": ["price", "pricing", "cost", "fee", "discount"],
+      "answer": "Demo prices are not published in the approved knowledge base. A manager must confirm any price, discount, or commercial condition before booking.",
+      "approved": true
+    },
+    {
+      "source_id": "faq-booking-process",
+      "topic": "booking_process",
+      "keywords": ["book", "booking", "reserve", "schedule", "process", "confirm"],
+      "answer": "A booking is created only after the customer selects an approved service and time, explicitly confirms the details, and the system checks calendar availability again.",
+      "approved": true
+    },
+    {
+      "source_id": "faq-changes",
+      "topic": "changes",
+      "keywords": ["cancel", "cancellation", "reschedule", "change", "move"],
+      "answer": "Automatic cancellation and rescheduling are not supported in this demo. A manager must review requests to change or cancel an appointment.",
+      "approved": true
+    }
+  ]
+}
+

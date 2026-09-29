@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#edf5fb"/><stop offset="1" stop-color="#e7f7f0"/></linearGradient><filter id="s"><feDropShadow dy="10" stdDeviation="15" flood-opacity=".15"/></filter></defs>
+  <rect width="1200" height="900" fill="url(#b)"/>
+  <text x="90" y="92" font-family="Arial" font-size="42" font-weight="700" fill="#17324a">Confirmed Demo Booking</text><text x="90" y="130" font-family="Arial" font-size="18" fill="#678095">Synthetic record · no external Calendar or Sheets API</text>
+  <g filter="url(#s)"><rect x="90" y="180" width="1020" height="620" rx="28" fill="#fff"/></g>
+  <circle cx="160" cy="250" r="34" fill="#32b987"/><path d="M143 250l12 12 24-27" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="215" y="244" font-family="Arial" font-size="28" font-weight="700" fill="#17324a">Booking confirmed</text><text x="215" y="278" font-family="Arial" font-size="17" fill="#698094">Python-authoritative state</text>
+  <rect x="835" y="220" width="205" height="48" rx="24" fill="#e4f8f0"/><text x="938" y="251" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#21855f">MOCK · SYNCED</text>
+  <line x1="140" y1="325" x2="1060" y2="325" stroke="#e4ebef" stroke-width="2"/>
+  <g font-family="Arial"><g fill="#6c8192" font-size="17"><text x="150" y="385">SERVICE</text><text x="150" y="480">DATE &amp; TIME</text><text x="150" y="575">TIME ZONE</text><text x="620" y="385">DURATION</text><text x="620" y="480">BUFFER</text><text x="620" y="575">FULFILLMENT</text></g><g fill="#17324a" font-size="23" font-weight="700"><text x="150" y="423">Standard Service Appointment</text><text x="150" y="518">30 Sep 2026 · 11:00–12:00</text><text x="150" y="613">Europe/Warsaw</text><text x="620" y="423">60 minutes</text><text x="620" y="518">15 minutes</text><text x="620" y="613">Sheet synced · Mock sent</text></g></g>
+  <rect x="140" y="675" width="920" height="76" rx="14" fill="#f4f7f9"/><text x="170" y="706" font-family="Arial" font-size="16" fill="#6c8192">SYNTHETIC BOOKING ID</text><text x="170" y="733" font-family="monospace" font-size="18" fill="#17324a">00000000-0000-4000-8000-000000000501</text>
+</svg>

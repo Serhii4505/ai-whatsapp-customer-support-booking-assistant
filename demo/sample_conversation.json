@@ -1,0 +1,14 @@
+{
+  "demo_only": true,
+  "company": "Northstar Service Studio",
+  "language": "en",
+  "timezone": "Europe/Warsaw",
+  "messages": [
+    {"actor": "synthetic_customer", "text": "Hi! I would like to book a Standard Service Appointment."},
+    {"actor": "mock_assistant", "text": "Available demo slots on 30 September 2026 include 11:00, 11:15 and 11:30."},
+    {"actor": "synthetic_customer", "text": "11:00 works for me."},
+    {"actor": "mock_assistant", "text": "Please confirm STANDARD_VISIT on 30 September 2026 at 11:00 Europe/Warsaw."},
+    {"actor": "synthetic_customer", "text": "confirm"},
+    {"actor": "mock_assistant", "text": "Your demo booking is confirmed. No real message or calendar event was created."}
+  ]
+}

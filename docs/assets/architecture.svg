@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#12253d"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#69d6b2"/></marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="90" y="90" fill="#f5f8fc" font-family="Arial" font-size="46" font-weight="700">AI WhatsApp Support &amp; Booking Assistant</text>
+  <text x="90" y="132" fill="#9cb0c8" font-family="Arial" font-size="22">Mock-first portfolio architecture · Northstar Service Studio</text>
+  <g font-family="Arial">
+    <rect x="90" y="220" rx="22" width="250" height="150" fill="#12314a" stroke="#4ad3a8" stroke-width="2"/>
+    <text x="215" y="272" fill="#4ad3a8" text-anchor="middle" font-size="26" font-weight="700">WhatsApp Boundary</text>
+    <text x="215" y="310" fill="#d8e2ee" text-anchor="middle" font-size="18">HMAC verification</text>
+    <text x="215" y="340" fill="#d8e2ee" text-anchor="middle" font-size="18">Normalization · Replay guard</text>
+    <rect x="450" y="220" rx="22" width="270" height="150" fill="#17304f" stroke="#6aa8ff" stroke-width="2"/>
+    <text x="585" y="272" fill="#75b2ff" text-anchor="middle" font-size="26" font-weight="700">n8n Orchestration</text>
+    <text x="585" y="310" fill="#d8e2ee" text-anchor="middle" font-size="18">Inactive sanitized workflow</text>
+    <text x="585" y="340" fill="#d8e2ee" text-anchor="middle" font-size="18">Routes Python decisions only</text>
+    <rect x="830" y="190" rx="22" width="340" height="210" fill="#20304b" stroke="#b188ff" stroke-width="2"/>
+    <text x="1000" y="245" fill="#c2a6ff" text-anchor="middle" font-size="28" font-weight="700">FastAPI / Python</text>
+    <text x="1000" y="286" fill="#f1f4f9" text-anchor="middle" font-size="19">Controlled AI &amp; approved FAQ</text>
+    <text x="1000" y="320" fill="#f1f4f9" text-anchor="middle" font-size="19">Availability &amp; booking state</text>
+    <text x="1000" y="354" fill="#f1f4f9" text-anchor="middle" font-size="19">Validation · Idempotency · Recovery</text>
+    <rect x="1280" y="220" rx="22" width="230" height="150" fill="#19364b" stroke="#ffc766" stroke-width="2"/>
+    <text x="1395" y="272" fill="#ffd079" text-anchor="middle" font-size="26" font-weight="700">SQLite</text>
+    <text x="1395" y="310" fill="#d8e2ee" text-anchor="middle" font-size="18">State · Audit</text>
+    <text x="1395" y="340" fill="#d8e2ee" text-anchor="middle" font-size="18">Idempotency records</text>
+  </g>
+  <g stroke="#69d6b2" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M340 295 H445"/><path d="M720 295 H825"/><path d="M1170 295 H1275"/>
+  </g>
+  <text x="800" y="450" fill="#9cb0c8" text-anchor="middle" font-family="Arial" font-size="20">NETWORK-FREE MOCK ADAPTERS</text>
+  <g font-family="Arial">
+    <rect x="180" y="540" rx="20" width="260" height="140" fill="#14283d" stroke="#3cd3a4" stroke-width="2"/>
+    <text x="310" y="595" fill="#f4f8fb" text-anchor="middle" font-size="24" font-weight="700">Mock Gemini</text>
+    <text x="310" y="634" fill="#aebdd0" text-anchor="middle" font-size="18">Structured intent only</text>
+    <rect x="520" y="540" rx="20" width="260" height="140" fill="#14283d" stroke="#3cd3a4" stroke-width="2"/>
+    <text x="650" y="595" fill="#f4f8fb" text-anchor="middle" font-size="24" font-weight="700">Mock Calendar</text>
+    <text x="650" y="634" fill="#aebdd0" text-anchor="middle" font-size="18">Slots · Atomic events</text>
+    <rect x="860" y="540" rx="20" width="260" height="140" fill="#14283d" stroke="#3cd3a4" stroke-width="2"/>
+    <text x="990" y="595" fill="#f4f8fb" text-anchor="middle" font-size="24" font-weight="700">Mock Sheets</text>
+    <text x="990" y="634" fill="#aebdd0" text-anchor="middle" font-size="18">Confirmed records only</text>
+    <rect x="1200" y="540" rx="20" width="260" height="140" fill="#14283d" stroke="#3cd3a4" stroke-width="2"/>
+    <text x="1330" y="595" fill="#f4f8fb" text-anchor="middle" font-size="24" font-weight="700">Mock Messaging</text>
+    <text x="1330" y="634" fill="#aebdd0" text-anchor="middle" font-size="18">Customer · Manager</text>
+  </g>
+  <g stroke="#6aa8ff" stroke-width="3" fill="none"><path d="M1000 400 V475 H310 V535"/><path d="M1000 475 H650 V535"/><path d="M1000 475 V535"/><path d="M1000 475 H1330 V535"/></g>
+  <rect x="90" y="760" rx="18" width="1420" height="70" fill="#0d1b2b" stroke="#29425b"/>
+  <text x="800" y="804" fill="#d5dfeb" text-anchor="middle" font-family="Arial" font-size="21">Python owns every booking decision · External APIs are not connected · Synthetic data only</text>
+</svg>

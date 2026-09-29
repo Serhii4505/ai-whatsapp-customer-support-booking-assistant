@@ -1,0 +1,10 @@
+{
+  "demo_only": true,
+  "handoff_id": "00000000-0000-4000-8000-000000000701",
+  "source_message_id": "wamid.synthetic.portfolio.handoff",
+  "reason": "manager_review_required",
+  "summary": "A synthetic customer requested an unapproved custom discount and refund review.",
+  "status": "pending",
+  "manager_notification": "mock_sent",
+  "side_effects": []
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "service_id": "INTRO_CALL",
+    "name": "Introductory Consultation",
+    "duration_minutes": 30,
+    "buffer_minutes": 15,
+    "active": true
+  },
+  {
+    "service_id": "STANDARD_VISIT",
+    "name": "Standard Service Appointment",
+    "duration_minutes": 60,
+    "buffer_minutes": 15,
+    "active": true
+  },
+  {
+    "service_id": "EXTENDED_SESSION",
+    "name": "Extended Service Session",
+    "duration_minutes": 90,
+    "buffer_minutes": 15,
+    "active": true
+  }
+]
+
