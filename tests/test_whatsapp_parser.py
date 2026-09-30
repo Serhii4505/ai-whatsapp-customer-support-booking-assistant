@@ -73,3 +73,16 @@ def test_malformed_payloads_are_rejected(payload: object) -> None:
     with pytest.raises(InvalidWebhookPayloadError):
         normalize_webhook(payload)
 
+
+@pytest.mark.parametrize(
+    "timestamp",
+    ["+1790683200", "1_790_683_200", "１７９０６８３２００", "-1790683200"],
+)
+def test_non_ascii_digit_timestamps_are_rejected(timestamp: str) -> None:
+    with pytest.raises(InvalidWebhookPayloadError, match="message.timestamp is invalid"):
+        normalize_webhook(
+            payload_with(
+                {"id": "id", "from": "48000000001", "timestamp": timestamp, "type": "text", "text": {"body": "Hello"}}
+            )
+        )
+

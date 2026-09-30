@@ -31,6 +31,9 @@ def _required_string(value: Any, label: str, *, max_length: int) -> str:
 
 def _parse_timestamp(value: Any) -> datetime:
     raw = _required_string(value, "message.timestamp", max_length=16)
+    # int() also accepts signs, underscores and non-ASCII digits; require plain ASCII digits.
+    if not (raw.isascii() and raw.isdigit()):
+        raise InvalidWebhookPayloadError("message.timestamp is invalid")
     try:
         epoch = int(raw)
         if epoch < 0:
