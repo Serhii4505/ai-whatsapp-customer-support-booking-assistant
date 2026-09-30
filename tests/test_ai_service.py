@@ -120,3 +120,29 @@ def test_iso_date_without_time_yields_no_time() -> None:
     result = make_service().process("Book the standard visit on 2026-10-05")
     assert result.extracted.requested_date_text == "2026-10-05"
     assert result.extracted.requested_time_text is None
+
+
+def test_open_slot_request_is_availability_not_faq() -> None:
+    result = make_service().process("Do you have an open slot tomorrow?")
+    assert result.intent == CustomerIntent.CHECK_AVAILABILITY
+    assert result.route == ResponseRoute.PYTHON_BOOKING_FLOW
+
+
+def test_free_slot_request_is_availability_not_faq() -> None:
+    result = make_service().process("Do you have a free slot tomorrow?")
+    assert result.intent == CustomerIntent.CHECK_AVAILABILITY
+    assert result.route == ResponseRoute.PYTHON_BOOKING_FLOW
+
+
+def test_when_are_you_open_remains_grounded_faq() -> None:
+    result = make_service().process("When are you open?")
+    assert result.intent == CustomerIntent.FAQ
+    assert result.route == ResponseRoute.GROUNDED_ANSWER
+    assert result.source_ids == ("faq-business-hours",)
+
+
+def test_opening_hours_remains_grounded_faq() -> None:
+    result = make_service().process("What are your opening hours?")
+    assert result.intent == CustomerIntent.FAQ
+    assert result.route == ResponseRoute.GROUNDED_ANSWER
+    assert result.source_ids == ("faq-business-hours",)

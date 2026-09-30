@@ -85,8 +85,10 @@ class MockGeminiProvider:
 
         # Informational qualifiers take precedence over generic words such as
         # "appointment", preventing price/duration questions from entering a
-        # future booking state machine.
-        if any(term in normalized for term in FAQ_PRIORITY_TERMS):
+        # future booking state machine. "open slot" is an availability phrase,
+        # so it is masked here to keep its "open" from matching as an FAQ term.
+        faq_priority_text = re.sub(r"\bopen slot", " ", normalized)
+        if any(term in faq_priority_text for term in FAQ_PRIORITY_TERMS):
             if service_id is None and self._looks_like_named_service(normalized):
                 extracted["unrecognized_service"] = self._service_phrase(normalized)
             return self._result(CustomerIntent.FAQ, 0.90, extracted)
