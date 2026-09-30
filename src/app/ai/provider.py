@@ -134,6 +134,8 @@ class MockGeminiProvider:
 
     @staticmethod
     def _extract_time(text: str) -> str | None:
+        # Remove ISO dates first so their month/day digits are never read as an hour.
+        text = re.sub(r"\b\d{4}-\d{2}-\d{2}\b", " ", text)
         match = re.search(r"\b(?:at\s+)?([01]?\d|2[0-3])(?::([0-5]\d))?\b", text)
         if not match:
             return None

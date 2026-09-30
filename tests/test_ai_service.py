@@ -103,3 +103,20 @@ def test_hallucinated_service_fails_closed() -> None:
     assert result.route == ResponseRoute.MANAGER_HANDOFF
     assert result.handoff_reason == "unapproved_service"
 
+
+def test_time_after_iso_date_is_not_read_from_the_date() -> None:
+    result = make_service().process("Book the standard visit on 2026-10-05 at 14:30")
+    assert result.extracted.requested_date_text == "2026-10-05"
+    assert result.extracted.requested_time_text == "14:30"
+
+
+def test_time_before_iso_date_is_extracted() -> None:
+    result = make_service().process("Book the standard visit at 14:30 on 2026-10-05")
+    assert result.extracted.requested_date_text == "2026-10-05"
+    assert result.extracted.requested_time_text == "14:30"
+
+
+def test_iso_date_without_time_yields_no_time() -> None:
+    result = make_service().process("Book the standard visit on 2026-10-05")
+    assert result.extracted.requested_date_text == "2026-10-05"
+    assert result.extracted.requested_time_text is None
